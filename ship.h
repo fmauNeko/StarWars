@@ -14,10 +14,10 @@ public:
   inline float getVitesse()const {return _vitesse;}
   inline void setVitesse(float v){_vitesse=v;}
 private:
-  float _vitesse;
+  QString _nom;
   int _x;
   int _y;
-  QString _nom;
+  float _vitesse;
 };
 
 #endif // SHIP_H
