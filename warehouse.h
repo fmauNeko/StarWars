@@ -13,7 +13,7 @@ public:
 private:
     int _n;
     int _m;
-    QMap<int, QMap<int, Ship*>*>* _warehouse;
+    QMap<int, QMap<int, Ship*> > _warehouse;
 };
 
 #endif // WAREHOUSE_H
