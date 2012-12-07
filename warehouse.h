@@ -2,7 +2,7 @@
 #define WAREHOUSE_H
 
 #include <QMap>
-
+ #include <QPair>
 #include "ship.h"
 
 class Warehouse
