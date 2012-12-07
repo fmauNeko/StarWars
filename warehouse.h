@@ -2,18 +2,19 @@
 #define WAREHOUSE_H
 
 #include <QMap>
- #include <QPair>
+#include <QPair>
 #include "ship.h"
 
 class Warehouse
 {
 public:
     Warehouse(int n, int m);
-    void deplaceVaisseau(Ship* v,int x, int y);
+    bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
 private:
     int _n;
     int _m;
-    QMap<int, QMap<int, Ship*> > _warehouse;
+    QMap<QPair<int, int>, Ship*> _warehouse;
+    QMap<int, QPair<int, int> > _platforms;
 };
 
 #endif // WAREHOUSE_H

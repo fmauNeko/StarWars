@@ -2,21 +2,15 @@
 
 Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
 {
-    _warehouse = QMap<int, QMap<int, Ship*> >();
-
-    for(int i = 0; i < m; i++)
-    {
-        _warehouse[i] = QMap<int, Ship*>();
-    }
+    _warehouse = QMap<QPair<int, int>, Ship*>();
 }
 
-bool Warehouse::deplaceVaisseau(Ship* v,int x, int y){
+bool Warehouse::deplaceVaisseau(Ship* v, QPair<int, int> newPos){
 
-  if(_warehouse[x][y]==NULL){
-      _warehouse[v->getx ()][v->gety ()]=NULL;
-      v->setx (x);
-      v->sety (y);
-      _warehouse[x][y]=v;
+  if(_warehouse[newPos]==NULL){
+      _warehouse[v->getPos()]=NULL;
+      v->setPos(newPos);
+      _warehouse[newPos]=v;
       return true;
     }
   else
