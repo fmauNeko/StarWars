@@ -15,6 +15,7 @@ private:
     int _m;
     QMap<QPair<int, int>, Ship*> _warehouse;
     QMap<int, QPair<int, int> > _platforms;
+    QPair<int, int> _posIni;
 };
 
 #endif // WAREHOUSE_H
