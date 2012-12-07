@@ -9,7 +9,7 @@ class Warehouse
 {
 public:
     Warehouse(int n, int m);
-
+    void deplaceVaisseau(Ship* v,int x, int y);
 private:
     int _n;
     int _m;
