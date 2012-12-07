@@ -13,9 +13,9 @@ Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
 bool Warehouse::deplaceVaisseau(Ship* v,int x, int y){
 
   if(_warehouse[x][y]==NULL){
-      _warehouse[v->getx ()][v->gety ()]=NULL;
-      v->setx (x);
-      v->sety (y);
+      _warehouse[v->getPos ().first][v->getPos ().second]=NULL;
+      v->setPos (x,y);
+
       _warehouse[x][y]=v;
       return true;
     }
