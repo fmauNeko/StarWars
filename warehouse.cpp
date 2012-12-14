@@ -24,3 +24,8 @@ bool Warehouse::deplaceVaisseau(Ship* v, QPair<int, int> newPos)
   else
     return false;
 }
+Warehouse* Warehouse::getInstance(int m,int n){
+  if(_uniqueInstance==NULL)
+    _uniqueInstance=New Warehouse(n,m);
+  return _uniqueInstance;
+}
