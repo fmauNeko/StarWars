@@ -17,6 +17,7 @@ private:
     Warehouse* _uniqueInstance;
     QMap<QPair<int, int>, Ship*> _warehouse;
     QMap<int, QPair<int, int> > _platforms;
+    QMap<int, Ship*> _assignedPlatforms;
     QPair<int, int> _posIni;
 
     Warehouse(int n, int m);
