@@ -8,7 +8,7 @@
 class Warehouse
 {
 public:
-  Warehouse* getInstance();
+  Warehouse* getInstance(int n, int m);
 private:
   bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
  inline QPair<int, int> getInitPos(){return _posIni;}
