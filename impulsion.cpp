@@ -3,3 +3,7 @@
 Impulsion::Impulsion()
 {
 }
+int Impulsion::getSpeed ()
+{
+  return _speed;
+}

@@ -20,11 +20,17 @@ SOURCES += main.cpp \
     ship.cpp \
     engine.cpp \
     impulsion.cpp \
-    fusion.cpp
+    fusion.cpp \
+    armor.cpp \
+    ionicarmor.cpp \
+    titaniumarmor.cpp
 
 HEADERS += \
     warehouse.h \
     ship.h \
     engine.h \
     impulsion.h \
-    fusion.h
+    fusion.h \
+    armor.h \
+    ionicarmor.h \
+    titaniumarmor.h
