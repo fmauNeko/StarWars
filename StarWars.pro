@@ -17,8 +17,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     warehouse.cpp \
-    ship.cpp
+    ship.cpp \
+    engine.cpp \
+    impulsion.cpp \
+    fusion.cpp
 
 HEADERS += \
     warehouse.h \
-    ship.h
+    ship.h \
+    engine.h \
+    impulsion.h \
+    fusion.h
