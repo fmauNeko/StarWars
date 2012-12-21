@@ -13,6 +13,11 @@ Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
         _platforms[QPair<int, int>(i, 0)] = randInt(0, n); // TODO: A corriger
 }
 
+int Warehouse::getDock (Ship *ship){
+
+  return _assignedPlatforms.key(ship, -1);
+}
+
 bool Warehouse::deplaceVaisseau(Ship* v, QPair<int, int> newPos)
 {
   if(_warehouse[newPos]==NULL){

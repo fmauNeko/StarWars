@@ -11,6 +11,7 @@ class Warehouse
 {
 public:
     Warehouse* getInstance(int n, int m);
+    int getDock(Ship* ship);
 private:
     int _n;
     int _m;
