@@ -21,3 +21,4 @@ qrc_*.cpp
 Makefile
 *-build-*
 *.autosave
+StarWars
