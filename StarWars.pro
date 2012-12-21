@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #-------------------------------------------------
 #
 # Project created by QtCreator 2012-12-07T08:35:35
@@ -34,3 +35,31 @@ HEADERS += \
     armor.h \
     ionicarmor.h \
     titaniumarmor.h
+=======
+#-------------------------------------------------
+#
+# Project created by QtCreator 2012-12-07T08:35:35
+#
+#-------------------------------------------------
+
+QT       += core
+
+QT       -= gui
+
+TARGET = StarWars
+CONFIG   += console
+CONFIG   -= app_bundle
+
+TEMPLATE = app
+
+
+SOURCES += main.cpp \
+    warehouse.cpp \
+    ship.cpp \
+    controltower.cpp
+
+HEADERS += \
+    warehouse.h \
+    ship.h \
+    controltower.h
+>>>>>>> 61188f5031979bdd801d4710423a901d05e89aaf
