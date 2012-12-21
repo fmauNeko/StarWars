@@ -26,7 +26,7 @@ private:
     inline int randInt(int low, int high){return qrand() % ((high + 1) - low) + low;}
     bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
     void assigneQuai(Ship* v);
-    inline QPair<int, int> getInitPos(){return _posIni;}
+    inline QPair<int, int> getInitialPosition(){return _posIni;}
 };
 
 #endif // WAREHOUSE_H
