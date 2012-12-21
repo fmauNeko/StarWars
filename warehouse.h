@@ -21,8 +21,10 @@ private:
     QPair<int, int> _posIni;
 
     Warehouse(int n, int m);
+
     inline int randInt(int low, int high){return qrand() % ((high + 1) - low) + low;}
     bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
+    void assigneQuai(Ship* v);
     inline QPair<int, int> getInitPos(){return _posIni;}
 };
 

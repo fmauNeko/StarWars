@@ -24,6 +24,18 @@ bool Warehouse::deplaceVaisseau(Ship* v, QPair<int, int> newPos)
   else
     return false;
 }
+
+void Warehouse::assigneQuai(Ship *v){
+    int quai = 0;
+
+    for(QMap<int, QPair<int, int> >::iterator i = _platforms.begin(); i != _platforms.end(); ++i)
+        quai = i.key();
+        if(!_assignedPlatforms.contains(quai))
+        {
+            _assignedPlatforms[quai] = v;
+        }
+}
+
 Warehouse* Warehouse::getInstance(int m,int n){
   if(_uniqueInstance==NULL)
     _uniqueInstance=new Warehouse(n,m);
