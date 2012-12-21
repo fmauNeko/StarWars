@@ -17,8 +17,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     warehouse.cpp \
-    ship.cpp
+    ship.cpp \
+    controltower.cpp
 
 HEADERS += \
     warehouse.h \
-    ship.h
+    ship.h \
+    controltower.h
