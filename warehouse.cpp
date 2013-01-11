@@ -1,5 +1,7 @@
 #include "warehouse.h"
 
+Warehouse* Warehouse::_uniqueInstance = NULL;
+
 Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
 {
     QTime time = QTime::currentTime();
