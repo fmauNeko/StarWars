@@ -24,7 +24,10 @@ SOURCES += main.cpp \
     armor.cpp \
     ionicarmor.cpp \
     titaniumarmor.cpp \
-    controltower.cpp
+    controltower.cpp \
+    factory.cpp \
+    smallfactory.cpp \
+    bigfactory.cpp
 
 HEADERS += \
     warehouse.h \
@@ -35,4 +38,7 @@ HEADERS += \
     armor.h \
     ionicarmor.h \
     titaniumarmor.h \
-    controltower.h
+    controltower.h \
+    factory.h \
+    smallfactory.h \
+    bigfactory.h
