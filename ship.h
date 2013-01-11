@@ -6,6 +6,7 @@
 class Ship
 {
 public:
+    Ship();
     Ship(QString nom,int x, int y,float vitesse);
 
     inline QPair<int, int> getPos()const {return _pos;}

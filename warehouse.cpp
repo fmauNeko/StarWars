@@ -40,9 +40,3 @@ void Warehouse::assigneQuai(Ship *v){
             _assignedPlatforms[quai] = v;
         }
 }
-
-Warehouse* Warehouse::getInstance(int m,int n){
-  if(_uniqueInstance==NULL)
-    _uniqueInstance=new Warehouse(n,m);
-  return _uniqueInstance;
-}

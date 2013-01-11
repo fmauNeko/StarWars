@@ -9,6 +9,9 @@ class ControlTower : public QThread
 public:
     ControlTower();
 
+protected:
+    void run();
+
 private:
     Ship* detectShip();
 };
