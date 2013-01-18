@@ -2,11 +2,14 @@
 #define SMALLFACTORY_H
 
 #include "factory.h"
+#include "fusion.h"
+#include "ionicarmor.h"
 
 class SmallFactory : public Factory
 {
 public:
-    SmallFactory();
+    Armor* createArmor();
+    Engine* createEngine();
 };
 
 #endif // SMALLFACTORY_H
