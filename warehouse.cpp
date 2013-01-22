@@ -14,6 +14,17 @@ Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
     for(int i = 0; i < n; i++)
         _platforms[randInt(0, n)] = QPair<int, int>(i, 0); // TODO: A corriger
 }
+//
+void Warehouse::collision(Ship* s1, Ship* s2)
+{
+    s1->getName();
+    s2->getName();
+    qDebug()<<"armures : s1="<<s1->getArmor()->getSolidity()<<" s2="<<s2->getArmor()->getSolidity();
+    s1->getArmor()->computeDamages(s2->getArmor());
+    s2->getArmor()->computeDamages(s1->getArmor());
+}
+
+
 
 int Warehouse::getDock (Ship *ship){
 

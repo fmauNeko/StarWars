@@ -12,7 +12,7 @@ Ship::~Ship()
 
 Ship::Ship(Factory* f)
 {
-    this->nom = "Nom";
+    this->_nom = "Nom";
     this->setPos(0,0);
 
     this->moteur = 2;

@@ -5,7 +5,14 @@ class TitaniumArmor : public Armor
 {
 public:
   TitaniumArmor();
-   void computeDamages(const Armor& autre);// {}// a réimplementer dans le cpp
+  int getState();
+  int getSolidity();
+   void computeDamages(Armor& autre);
+
+private:
+   int _state;
+   int _solidity;
+
 };
 
 #endif // TITANIUMARMOR_H

@@ -5,7 +5,13 @@ class IonicArmor : public Armor
 {
 public:
   IonicArmor();
-  void computeDamages(const Armor&);
+  int getState();
+  int getSolidity();
+   void computeDamages(Armor& autre);
+private:
+   int _state;
+   int _solidity;
+
 };
 
 #endif // IONICARMOR_H

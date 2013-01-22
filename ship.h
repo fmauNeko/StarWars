@@ -9,7 +9,7 @@ public:
     Ship();
     Ship(QString nom,int x, int y,float vitesse);
     Ship(Factory* f);
-    Ship(Qstring nom, int posX,int posY, Factory* f);
+    Ship(QString nom, int posX,int posY, Factory* f);
     inline QPair<int, int> getPos()const {return _pos;}
     inline void setPos(int x,int y){_pos = QPair<int,int>(x, y);}
     inline void setPos(QPair<int, int> newPos){_pos = newPos;}
@@ -21,6 +21,7 @@ public:
     virtual bool canflyover(Ship* s) =0;
     virtual bool canflyindiagonal(Ship* s) =0;
     virtual bool accepte(int dockid) =0;
+
     int getPriority();
     inline void setName(QString nom){_nom=nom;}
     inline float getVitesse()const {return _vitesse;}

@@ -8,7 +8,7 @@ public:
   virtual ~Armor(){}
   int getState();
   int getSolidity();
-  virtual void computeDamages(const Armor&)=0;
+  virtual void computeDamages(Armor*)=0;
 
   float _state;
   float _solidity;
