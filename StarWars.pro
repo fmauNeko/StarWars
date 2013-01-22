@@ -27,7 +27,10 @@ SOURCES += main.cpp \
     controltower.cpp \
     factory.cpp \
     smallfactory.cpp \
-    bigfactory.cpp
+    bigfactory.cpp \
+    enginecomponent.cpp \
+    reactor.cpp \
+    rocket.cpp
 
 HEADERS += \
     warehouse.h \
@@ -41,4 +44,7 @@ HEADERS += \
     controltower.h \
     factory.h \
     smallfactory.h \
-    bigfactory.h
+    bigfactory.h \
+    enginecomponent.h \
+    reactor.h \
+    rocket.h
