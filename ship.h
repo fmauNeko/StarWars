@@ -2,26 +2,38 @@
 #define SHIP_H
 #include <QDebug>
 #include <QPair>
-
+#include "Factory.h"
 class Ship
 {
 public:
     Ship();
     Ship(QString nom,int x, int y,float vitesse);
-
+    Ship(Factory* f);
+    Ship(Qstring nom, int posX,int posY, Factory* f);
     inline QPair<int, int> getPos()const {return _pos;}
     inline void setPos(int x,int y){_pos = QPair<int,int>(x, y);}
     inline void setPos(QPair<int, int> newPos){_pos = newPos;}
-
+    void incr_moteur();
+    void decr_moteur();
+    Armor* getArmor();
+    virtual ~Ship() =0;
     inline QString getName(){return _nom;}
+    virtual bool canflyover(Ship* s) =0;
+    virtual bool canflyindiagonal(Ship* s) =0;
+    virtual bool accepte(int dockid) =0;
+    int getPriority();
     inline void setName(QString nom){_nom=nom;}
     inline float getVitesse()const {return _vitesse;}
     inline void setVitesse(float v){_vitesse=v;}
 private:
+    Factory* _factory;
     QString _nom;
-
+    Engine* _engine;
+    Armor* _armor;
     QPair<int, int> _pos;
     float _vitesse;
+    int priority;
+    int moteur;
 };
 
 #endif // SHIP_H
