@@ -32,7 +32,11 @@ SOURCES += main.cpp \
     reactor.cpp \
     rocket.cpp \
     armorcomponent.cpp \
-    shield.cpp
+    shield.cpp \
+    arc170.cpp \
+    executor.cpp \
+    leviathan.cpp \
+    xwing.cpp
 
 HEADERS += \
     warehouse.h \
@@ -51,4 +55,8 @@ HEADERS += \
     reactor.h \
     rocket.h \
     armorcomponent.h \
-    shield.h
+    shield.h \
+    arc170.h \
+    executor.h \
+    leviathan.h \
+    xwing.h

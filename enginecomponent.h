@@ -6,10 +6,11 @@
 class EngineComponent : public Engine
 {
 public:
-    EngineComponent(Engine *engine) : _engine(engine) {}
-    virtual int getSpeed()=0;
 
+    virtual int getSpeed()=0;
+EngineComponent(Engine *engine);
 private:
+
     Engine* _engine;
 };
 

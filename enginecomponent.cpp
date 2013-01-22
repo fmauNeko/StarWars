@@ -1,5 +1,6 @@
 #include "enginecomponent.h"
 
-EngineComponent::EngineComponent()
+EngineComponent::EngineComponent(Engine * engine)
 {
+    _engine=engine;
 }
