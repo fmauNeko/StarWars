@@ -7,7 +7,7 @@ public:
   TitaniumArmor();
   int getState();
   int getSolidity();
-   void computeDamages(Armor& autre);
+   void computeDamages(Armor* autre);
 
 private:
    int _state;

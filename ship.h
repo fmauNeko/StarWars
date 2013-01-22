@@ -16,12 +16,12 @@ public:
     void incr_moteur();
     void decr_moteur();
     Armor* getArmor();
-    virtual ~Ship() =0;
+     ~Ship();
     inline QString getName(){return _nom;}
-    virtual bool canflyover(Ship* s) =0;
-    virtual bool canflyindiagonal(Ship* s) =0;
-    virtual bool accepte(int dockid) =0;
-
+    bool canflyover(Ship* s);
+     bool canflyindiagonal(Ship* s) ;
+    bool accepte(int dockid) ;
+    int recup_moteur();
     int getPriority();
     inline void setName(QString nom){_nom=nom;}
     inline float getVitesse()const {return _vitesse;}

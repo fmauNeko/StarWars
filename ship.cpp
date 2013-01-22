@@ -17,12 +17,12 @@ Ship::Ship(Factory* f)
 
     this->moteur = 2;
     this->_factory = f;
-    this->_engine = f1->createEngine();
-    this->_armor = f1->createArmor();
+    this->_engine = _factory->createEngine();
+    this->_armor = _factory->createArmor();
 };
 Armor* Ship::getArmor()
 {
-    return this->a1;
+    return this->_armor;
 }
 
 int Ship::getPriority()
