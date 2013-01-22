@@ -30,7 +30,9 @@ SOURCES += main.cpp \
     bigfactory.cpp \
     enginecomponent.cpp \
     reactor.cpp \
-    rocket.cpp
+    rocket.cpp \
+    armorcomponent.cpp \
+    shield.cpp
 
 HEADERS += \
     warehouse.h \
@@ -47,4 +49,6 @@ HEADERS += \
     bigfactory.h \
     enginecomponent.h \
     reactor.h \
-    rocket.h
+    rocket.h \
+    armorcomponent.h \
+    shield.h
