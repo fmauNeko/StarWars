@@ -7,7 +7,7 @@ int Rocket::getSpeed()
 
 Rocket::Rocket()
 {
-    _engine=NULL;
+    //_engine=NULL;
 }
 
 Rocket::Rocket(Engine* engine)

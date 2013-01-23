@@ -9,6 +9,7 @@ public:
 
     virtual int getSpeed()=0;
     EngineComponent(Engine *engine);
+        EngineComponent();
     ~EngineComponent();
 
 protected:

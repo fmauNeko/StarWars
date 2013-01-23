@@ -7,3 +7,8 @@ EngineComponent::EngineComponent(Engine * engine)
 EngineComponent::~EngineComponent()
 {
 }
+
+EngineComponent::EngineComponent()
+{
+
+}

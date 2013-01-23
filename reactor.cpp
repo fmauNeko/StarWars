@@ -6,7 +6,7 @@ int Reactor::getSpeed()
 }
 Reactor::Reactor()
 {
-    _engine=NULL;
+    //_engine=NULL;
 }
 
 Reactor::Reactor(Engine* engine)

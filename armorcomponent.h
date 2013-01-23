@@ -7,6 +7,8 @@ class ArmorComponent : public Armor
 {
 public:
     ArmorComponent(Armor *armor) : _armor(armor) {}
+        ArmorComponent();
+        ~ArmorComponent();
     virtual int getSolidity() = 0;
 
 protected:

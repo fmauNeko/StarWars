@@ -10,7 +10,7 @@ Shield::Shield(Armor* armor)
 }
 Shield::Shield()
 {
-    _armor = NULL;
+    //_armor = NULL;
 }
 
 Shield::~Shield()
