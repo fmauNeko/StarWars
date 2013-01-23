@@ -2,6 +2,12 @@
 #include "warehouse.h"
 #include <QTime>
 #include <iostream>
+#include "bigfactory.h"
+#include "smallfactory.h"
+#include "arc170.h"
+#include "leviathan.h"
+#include "executor.h"
+#include "xwing.h"
 
 ControlTower::ControlTower()
 {
@@ -9,13 +15,44 @@ ControlTower::ControlTower()
 
 Ship* ControlTower::detectShip()
 {
+    int r=0;
+    int facto=0;
+    int deco=0;
+
     QTime now = QTime::currentTime();
     qsrand(now.msec());
 
-    if((qrand()%10) > 7)
-        return new Ship();
+    r=(rand())%4;
+    facto=(rand())%2;
+    deco=(rand())%3;
 
-    return NULL;
+    Factory* factory=NULL;
+    if(facto==0)
+         factory = new BigFactory();
+    else
+         factory = new SmallFactory();
+
+    switch (r)
+    {
+        case 0:{
+            XWing* a=new XWing(factory,deco);
+            return a;
+        }
+        case 1:{
+            Executor* a=new Executor(factory,deco);
+            return a;
+        }
+        case 2:{
+            Leviathan* a=new Leviathan(factory,deco);
+            return a;
+        }
+        case 3:{
+            ARC170* a=new ARC170(factory,deco);
+            return a;
+        }
+    }
+    //return new Ship("newShip",1,1);
+    return new ARC170();
 }
 
 void ControlTower::run()
@@ -68,10 +105,10 @@ positionInit = hangar->getInitialPosition();
     while( quaiok == false || iteration>((hangar->getHauteur())*2+(hangar->getLargeur())))
     {
         //premiere boucle pour voir si le quai est plein
-        if (vaisseau->accepte(hangar->getDock(iteration))==true)//on verifie si il accepte le quai
+        if (vaisseau->accepte(iteration)==true)//on verifie si il accepte le quai
             quaiok=hangar->attachShip(vaisseau,iteration);//on voit si le quai est occupé
         else
-            qDebug()<<"le vaisseau n'accepte pas le quai propose ayant l'Id "<<hangar->getDock(iteration);
+            qDebug()<<"le vaisseau n'accepte pas le quai propose ayant l'Id "<<iteration;
         iteration++;
         sleep(2);
     }
@@ -126,7 +163,7 @@ positionInit = hangar->getInitialPosition();
     }
 
     qDebug() <<"le vaisseau doit se deplacer de "<< iterationx<<" en x et de "<<iterationy<<" en y" ;
-    QPair<int, int> deplacement = vaisseau->_pos;
+    QPair<int, int> deplacement = vaisseau->getPos();
 
     while( iterationx > 0 )
     {
@@ -160,9 +197,5 @@ positionInit = hangar->getInitialPosition();
         sleep(1);
     }
     qDebug() <<"Le vaisseau est arrive a quai il jete l'ancre ";
-
-    hangar->effacePositionInitial();
-
-    delete deplacement;
 
 }

@@ -20,7 +20,7 @@ public:
     inline QString getName(){return _nom;}
     bool canflyover(Ship* s);
      bool canflyindiagonal(Ship* s) ;
-    bool accepte(int dockid) ;
+    virtual bool accepte(int dockid)=0;
     int recup_moteur();
     int getPriority();
     inline void setName(QString nom){_nom=nom;}
