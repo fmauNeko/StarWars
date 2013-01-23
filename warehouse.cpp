@@ -24,7 +24,10 @@ void Warehouse::collision(Ship* s1, Ship* s2)
     s2->getArmor()->computeDamages(s1->getArmor());
 }
 
-
+QPair<int, int> Warehouse::getDockPosition(int id)
+{
+    return _platforms.value(id);
+}
 
 int Warehouse::getDock (Ship *ship){
 

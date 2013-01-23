@@ -18,6 +18,7 @@ public:
     }
 
     int getDock(Ship* ship);
+    QPair<int, int> getDockPosition(int numero);
     bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
     void assigneQuai(Ship* v);
     void collision(Ship* s1, Ship* s2);
