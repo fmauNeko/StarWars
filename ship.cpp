@@ -5,6 +5,10 @@ Ship::Ship(QString nom, int x, int y, float vitesse):_nom(nom),_vitesse(vitesse)
 Ship::setPos (x,y);
 
 }
+Ship::Ship(QString nom, int posX,int posY, Factory* f):_nom(nom),_factory(f){
+  Ship::setPos (posX,posY);
+
+}
 
 Ship::~Ship()
 {
