@@ -6,6 +6,7 @@ class Reactor : public EngineComponent
 public:
     Reactor();
     ~Reactor();
+    Reactor(Engine* engine);
     int getSpeed();
 };
 

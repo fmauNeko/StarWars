@@ -36,7 +36,8 @@ SOURCES += main.cpp \
     arc170.cpp \
     executor.cpp \
     leviathan.cpp \
-    xwing.cpp
+    xwing.cpp \
+    controlin.cpp
 
 HEADERS += \
     warehouse.h \
@@ -59,4 +60,5 @@ HEADERS += \
     arc170.h \
     executor.h \
     leviathan.h \
-    xwing.h
+    xwing.h \
+    controlin.h
