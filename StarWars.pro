@@ -37,7 +37,8 @@ SOURCES += main.cpp \
     executor.cpp \
     leviathan.cpp \
     xwing.cpp \
-    controlin.cpp
+    controlin.cpp \
+    controlout.cpp
 
 HEADERS += \
     warehouse.h \
@@ -61,4 +62,5 @@ HEADERS += \
     executor.h \
     leviathan.h \
     xwing.h \
-    controlin.h
+    controlin.h \
+    controlout.h
