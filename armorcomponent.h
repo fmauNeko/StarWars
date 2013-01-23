@@ -9,7 +9,7 @@ public:
     ArmorComponent(Armor *armor) : _armor(armor) {}
     virtual int getSolidity() = 0;
 
-private:
+protected:
     Armor* _armor;
 };
 

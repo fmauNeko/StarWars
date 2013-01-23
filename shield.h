@@ -1,6 +1,8 @@
 #ifndef SHIELD_H
 #define SHIELD_H
 
+#include "armorcomponent.h"
+
 class Shield : public ArmorComponent
 {
 public:

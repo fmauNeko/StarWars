@@ -8,8 +8,9 @@ class EngineComponent : public Engine
 public:
 
     virtual int getSpeed()=0;
-EngineComponent(Engine *engine);
-private:
+    EngineComponent(Engine *engine);
+
+protected:
 
     Engine* _engine;
 };
