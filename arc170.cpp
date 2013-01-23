@@ -5,7 +5,15 @@ Ship("ARC170",-1,-1,f)
 {
     priority=4;
 }
-
+ARC170::ARC170(Factory* f,int number):
+Ship("ARC170",-1,-1,f,number)
+{
+    priority=4;
+}
+int Arc170::getPriority()
+{
+    return priority;
+}
 ARC170::~ARC170(){}
 
 bool ARC170::canflyover(Ship* s){return (getPriority()>s->getPriority()?true:false);}

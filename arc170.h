@@ -11,11 +11,12 @@ class ARC170 : public Ship
 {
     public:
     ARC170(Factory* f);
+    ARC170(Factory *fact,int number);
     ~ARC170();
     bool canflyover(Ship* s);
     bool canflyindiagonal(Ship* s);
     bool accepte(int dockid);
-
+    int getPriority();
     private:
     int priority;
 };

@@ -5,7 +5,15 @@ Ship("Executor",-1,-1,f)
 {
     priority=10;
 }
-
+Executor::Executor(Factory* f,int number):
+Ship("Executor",-1,-1,f,number)
+{
+    priority=10;
+}
+int Executor::getPriority()
+{
+    return priority;
+}
 Executor::~Executor(){}
 
 

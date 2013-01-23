@@ -11,11 +11,12 @@ class XWing : public Ship
 {
     public:
     XWing(Factory* f);
+    XWing(Factory *fact,int number);
     ~XWing();
     bool canflyover(Ship* s);
     bool canflyindiagonal(Ship* s);
     bool accepte(int dockid);
-
+   int getPriority();
     private:
     int priority;
 };

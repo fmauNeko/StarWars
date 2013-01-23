@@ -11,11 +11,12 @@ class Leviathan : public Ship
 {
     public:
     Leviathan(Factory* f);
+    Leviathan(Factory* fact,int number);
     ~Leviathan();
     bool canflyover(Ship* s);
     bool canflyindiagonal(Ship* s);
     bool accepte(int dockid);
-
+    int getPriority();
     private:
     int priority;
 };

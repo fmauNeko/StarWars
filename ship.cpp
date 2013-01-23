@@ -7,8 +7,17 @@ Ship::setPos (x,y);
 }
 Ship::Ship(QString nom, int posX,int posY, Factory* f):_nom(nom),_factory(f){
   Ship::setPos (posX,posY);
-
+  this->_engine = _factory->createEngine();
+  this->_armor = _factory->createArmor();
+    this->moteur = 2;
 }
+Ship::Ship(QString nom, int posX,int posY, Factory* f,int caract):_nom(nom),_factory(f){
+  Ship::setPos (posX,posY);
+  this->_engine = _factory->createEngine(caract);
+  this->_armor = _factory->createArmor(caract);
+    this->moteur = 2;
+}
+
 
 Ship::~Ship()
 {

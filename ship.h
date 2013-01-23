@@ -10,6 +10,7 @@ public:
     Ship(QString nom,int x, int y,float vitesse);
     Ship(Factory* f);
     Ship(QString nom, int posX,int posY, Factory* f);
+    Ship(QString nom, int posX,int posY, Factory* f,int number);
     inline QPair<int, int> getPos()const {return _pos;}
     inline void setPos(int x,int y){_pos = QPair<int,int>(x, y);}
     inline void setPos(QPair<int, int> newPos){_pos = newPos;}

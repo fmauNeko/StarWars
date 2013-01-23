@@ -52,7 +52,7 @@ Ship* ControlTower::detectShip()
         }
     }
     //return new Ship("newShip",1,1);
-    return new ARC170();
+    return NULL;
 }
 
 void ControlTower::run()

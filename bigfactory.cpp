@@ -20,7 +20,7 @@ Armor* BigFactory::createArmor(int number)
      return armor;
 }
 
-Engine* BigFactory::createengine(int number)
+Engine* BigFactory::createEngine(int number)
 {
      Engine* engine=new Impulsion();
      if(number==1)

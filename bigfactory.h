@@ -14,7 +14,7 @@ public:
     Armor* createArmor();
     Engine* createEngine();
 
-    Engine* createengine(int number);
+    Engine* createEngine(int number);
     Armor* createArmor(int number);
 };
 

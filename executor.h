@@ -11,10 +11,12 @@ class Executor : public Ship
 {
     public:
     Executor(Factory* f);
+     Executor(Factory *fact,int number);
     ~Executor();
     bool canflyover(Ship* s);
     bool canflyindiagonal(Ship* s);
     bool accepte(int dockid);
+    int getPriority();
 
     private:
     int priority;

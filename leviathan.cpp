@@ -6,6 +6,15 @@ Ship("Leviathan",-1,-1,f)
     priority=7;
 }
 
+Leviathan::Leviathan(Factory* f,int number):
+Ship("Leviathan",-1,-1,f,number)
+{
+    priority=7;
+}
+int Leviathan::getPriority(){
+    return priority;
+}
+
 Leviathan::~Leviathan(){}
 
 bool Leviathan::canflyover(Ship* s){return false;}
