@@ -8,6 +8,7 @@ class ControlTower : public QThread
 {
 public:
     ControlTower();
+    void dirigeShip(Ship* vaisseau);
 
 protected:
     void run();

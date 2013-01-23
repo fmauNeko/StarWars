@@ -41,9 +41,9 @@ void ControlTower::run()
 void ControlTower::dirigeShip(Ship* vaisseau)
 {
     Warehouse* hangar;
-    hangar=Warehouse::getInstanceW(20,20);
+    hangar=Warehouse::getInstance(20,20);
 QPair<int, int> positionInit;
-positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitialPosition().y);
+positionInit = hangar->getInitialPosition();
 
     bool positionOk=hangar->deplaceVaisseau(vaisseau,positionInit);
 
@@ -53,7 +53,7 @@ positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitia
         positionOk=hangar->deplaceVaisseau(vaisseau,positionInit);
     }
 
-    cout<<endl;
+
 
     int iteration=0;
     bool quaiok=false;
@@ -68,10 +68,10 @@ positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitia
     while( quaiok == false || iteration>((hangar->getHauteur())*2+(hangar->getLargeur())))
     {
         //premiere boucle pour voir si le quai est plein
-        if (vaisseau->accept(hangar->getDockId(iteration))==true)//on verifie si il accepte le quai
+        if (vaisseau->accepte(hangar->getDock(iteration))==true)//on verifie si il accepte le quai
             quaiok=hangar->attachShip(vaisseau,iteration);//on voit si le quai est occupé
         else
-            cout<<"le vaisseau n'accepte pas le quai propose ayant l'Id "<<hangar->getDockId(iteration)<<endl;
+            qDebug()<<"le vaisseau n'accepte pas le quai propose ayant l'Id "<<hangar->getDock(iteration);
         iteration++;
         sleep(2);
     }
@@ -79,13 +79,12 @@ positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitia
     //si il est plein on regarde les priorité
     if(quaiok ==false)
     {
-        cout<<"le vaisseau n'a accepte aucun quai"<<endl;
+        qDebug()<<"le vaisseau n'a accepte aucun quai";
     }
 
 //fin chri
+    QPair<int, int> Quai=hangar->getDockPosition(iteration-1);
 
-    Coord Quai=hangar->getDockPosition(iteration-1);
-    Coord init=hangar->getInitialPosition();
 
     bool deplacementX;
     bool deplacementY;
@@ -94,51 +93,52 @@ positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitia
     int iterationy=0;
 
 
-    while((Quai.x) != init.x) // calcul de la trajectoire en x
+    while((Quai.first) != positionInit.first) // calcul de la trajectoire en first
     {
-        if(Quai.x < init.x)
+        if(Quai.first < positionInit.first)
         {
-            Quai.x++;
+            Quai.first++;
             deplacementX=true;
         }
 
-        if(Quai.x > init.x)
+        if(Quai.first > positionInit.first)
         {
-            Quai.x--;
+            Quai.first--;
             deplacementX=false;
         }
         iterationx++;
     }
 
-    while(Quai.y != init.y) // calcul de la trajectoire en y
+    while(Quai.second != positionInit.second) // calcul de la trajectoire en y
     {
-        if(Quai.y < init.y)
+        if(Quai.second < positionInit.second)
         {
-            Quai.y++;
+            Quai.second++;
             deplacementY=true;
         }
 
-        if(Quai.y > init.y)
+        if(Quai.second > positionInit.second)
         {
-            Quai.y--;
+            Quai.second--;
             deplacementY=false;
         }
         iterationy++;
     }
-    cout <<"le vaisseau doit se deplacer de "<< iterationx<<" en x et de "<<iterationy<<" en y" <<endl<<endl;
-    Coord *deplacement = vaisseau->position;
+
+    qDebug() <<"le vaisseau doit se deplacer de "<< iterationx<<" en x et de "<<iterationy<<" en y" ;
+    QPair<int, int> deplacement = vaisseau->_pos;
 
     while( iterationx > 0 )
     {
         if(!deplacementX)
         {
-            (deplacement->x)++;
-            hangar->setShipPosition(vaisseau,deplacement);
+            (deplacement.first)++;
+            hangar->deplaceVaisseau(vaisseau,deplacement);
 
         }else
         {
-            (deplacement->x)--;
-            hangar->setShipPosition(vaisseau,deplacement);
+            (deplacement.first)--;
+            hangar->deplaceVaisseau(vaisseau,deplacement);
         }
         iterationx--;
         sleep(1);
@@ -148,18 +148,18 @@ positionInit = QPair<int, int>(hangar->getInitialPosition().x, hangar->getInitia
         if(!deplacementY)
 
         {
-            (deplacement->y)++;
-            hangar->setShipPosition(vaisseau,deplacement);
+            (deplacement.second)++;
+            hangar->deplaceVaisseau(vaisseau,deplacement);
 
         }else
         {
-            (deplacement->y)--;
-            hangar->setShipPosition(vaisseau,deplacement);
+            (deplacement.second)--;
+            hangar->deplaceVaisseau(vaisseau,deplacement);
         }
         iterationy--;
         sleep(1);
     }
-    cout <<"Le vaisseau est arrive a quai il jete l'ancre "<<endl<<endl;
+    qDebug() <<"Le vaisseau est arrive a quai il jete l'ancre ";
 
     hangar->effacePositionInitial();
 

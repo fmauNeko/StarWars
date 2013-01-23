@@ -25,6 +25,7 @@ public:
     int getPriority();
     inline void setName(QString nom){_nom=nom;}
     inline float getVitesse()const {return _vitesse;}
+    inline QString getName()const {return _nom;}
     inline void setVitesse(float v){_vitesse=v;}
 private:
     Factory* _factory;

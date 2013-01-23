@@ -1,3 +1,5 @@
+
+
 #include "warehouse.h"
 
 Warehouse* Warehouse::_uniqueInstance = NULL;
@@ -15,6 +17,13 @@ Warehouse::Warehouse(int n, int m) : _n(n), _m(m)
         _platforms[randInt(0, n)] = QPair<int, int>(i, 0); // TODO: A corriger
 }
 //
+QPair<int, int> Warehouse::getDockPosition(int id)
+{
+    if(_platforms.find(id) != _platforms.end())
+        return _platforms.value(id);
+    else
+        return QPair<int, int>(-5, -5);
+}
 void Warehouse::collision(Ship* s1, Ship* s2)
 {
     s1->getName();
@@ -24,13 +33,22 @@ void Warehouse::collision(Ship* s1, Ship* s2)
     s2->getArmor()->computeDamages(s1->getArmor());
 }
 
-QPair<int, int> Warehouse::getDockPosition(int id)
+bool Warehouse::attachShip(Ship* s, int id)
 {
-    if(_platforms.find(id) != _platforms.end())
-        return _platforms.value(id);
+    QPair<int, int> coordQuai = getDockPosition(id);
+
+   if(_assignedPlatforms[id] == NULL && coordQuai.first!=-5 && coordQuai.second!=-5)
+   {
+        _assignedPlatforms[id] = s;
+        qDebug()<< "Le vaisseau "<< s->getName() << " est associe au quai de coordonne ("<<coordQuai.first<<","<<coordQuai.second<<")";
+        return true;
+   }
     else
-        return QPair<int, int>(-5, -5);
+         qDebug()<< "Quai non valide ";
+
+    return false;
 }
+
 
 int Warehouse::getDock (Ship *ship){
 
@@ -59,3 +77,4 @@ void Warehouse::assigneQuai(Ship *v){
             _assignedPlatforms[quai] = v;
         }
 }
+

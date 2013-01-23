@@ -16,11 +16,13 @@ public:
             _uniqueInstance=new Warehouse(n,m);
         return _uniqueInstance;
     }
-
+    inline int getLargeur(){return _n;}
+      inline int getHauteur(){return _m;}
+       QPair<int, int> getDockPosition(int numero);
     int getDock(Ship* ship);
-    QPair<int, int> getDockPosition(int numero);
     bool deplaceVaisseau(Ship* v, QPair<int, int> newPos);
     void assigneQuai(Ship* v);
+    bool attachShip(Ship* s, int id);
     void collision(Ship* s1, Ship* s2);
     inline QPair<int, int> getInitialPosition(){return _posIni;}
 private:
@@ -38,3 +40,4 @@ private:
 };
 
 #endif // WAREHOUSE_H
+
