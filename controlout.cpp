@@ -23,7 +23,7 @@ void ControlOut::visit(Ship* ship)
 
     QPair<int, int> posVaisseau = hangar->getDockPosition(hangar->getDock(ship));
 
-    if(posVaisseau.first() == 0 || posVaisseau.first() == hangar->getLargeur() || posVaisseau.second == 0)
+    if(posVaisseau.first == 0 || posVaisseau.first == hangar->getLargeur() || posVaisseau.second == 0)
     {
         hangar->deplaceVaisseau(ship, hangar->getInitialPosition());
     }

@@ -10,7 +10,7 @@ Ship("ARC170",-1,-1,f,number)
 {
     priority=4;
 }
-int Arc170::getPriority()
+int ARC170::getPriority()
 {
     return priority;
 }

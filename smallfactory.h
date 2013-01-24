@@ -4,6 +4,10 @@
 #include "factory.h"
 #include "fusion.h"
 #include "ionicarmor.h"
+#include "shield.h"
+#include "rocket.h"
+#include "reactor.h"
+#include "impulsion.h"
 
 class SmallFactory : public Factory
 {
